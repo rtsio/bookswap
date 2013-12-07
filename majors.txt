@@ -30,3 +30,4 @@ phys,Physics
 poli,Political sciences
 psyc,Psychology
 stat,Statistics
+othr,Other
