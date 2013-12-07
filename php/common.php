@@ -45,3 +45,12 @@
         } 
         return false;
     }
+
+    function getBookDetailFromISBN($isbn){
+        if(!$isbn || strlen($isbn)<9){
+            return false;
+        }
+        $result = file_get_contents("http://openlibrary.org/api/books?jscmd=details&format=json&bibkeys=ISBN:$isbn");
+        $book = json_decode($result);
+        return $book;
+    }

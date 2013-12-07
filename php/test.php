@@ -1,8 +1,5 @@
 <?php
 	require_once('common.php');
-	echo 'start';
-	Print_r(getAllMajorsArray());
-	Print_r(getBooksArray('econ'));
-	echo 'done';
+	var_dump(getBookDetailFromISBN('1594860416'));
 	flush();
 ?>
