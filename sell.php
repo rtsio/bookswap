@@ -3,6 +3,7 @@
    require("php/common.php");
    if ($_SERVER['REQUEST_METHOD'] === 'POST'):
        print_r($_POST);
+       print_r($_SESSION);
        $query = "INSERT INTO sell (isbn, title, author, edition, category, condition, price, user)
                  VALUES (:isbn, :title, :author, :edition, :category, :condition, :price, :user)";
        $query_params = array(':isbn' => $_POST['isbn'],
