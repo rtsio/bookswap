@@ -48,7 +48,7 @@
     <?php else: ?>
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-11">
 
 <form class="form-inline" role="form">
   <div class="form-group">
@@ -71,9 +71,9 @@
       </div>
       </table>
       <h4 class="text-muted">Or pick a major: </h4><br>
-      <form class="form" role="form" action="browse.php" method="get">
+      <form class="form-inline" role="form" action="browse.php" method="get">
         <div class="form-group">
-        <select name="cat">
+        <select name="cat" class="form-control">
         <?php
         $majors = getAllMajorsArray();
         foreach($majors as $code => $major){
@@ -82,10 +82,10 @@
         ?>
         </select>
         </div>
-        <button type="submit" class="btn btn-default" value="Free me from the tyranny of the textbook industry">
+        <button type="submit" class="btn btn-warning">Free me from the tyranny of the textbook industry</button>
       </form>
     </div>
-    <div>
+    <div style="margin-top: 10px;">
       <a class="btn btn-primary btn-large" href="sell.php">I want to sell</a>
     </div>
     </div>
