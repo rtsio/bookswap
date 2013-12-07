@@ -13,13 +13,17 @@
 <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>    
 <script>
+$(document).ready(function(){
     $("#isbn").change(function(){ 
-        if ($("#isbn").val().length < 10) {
+        if ($("#isbn").val().length < 9) {
             $("#found").html("ISBN not found, please enter data manually.");
+            $("#found").css({'color':'red'}); 
         } else {
             $("#found").html("ISBN found! Please check the data below for correctness.");
+	    $("#found").css({'color':'green'});
         }
     }); 
+});
     </script>
   </head>
   <body>
