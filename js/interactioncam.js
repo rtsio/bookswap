@@ -131,6 +131,9 @@
     if (ev.which === 39) { initiateupload(); }
   },false);
 
+  setstate('playing');
+        init();
+
   video.addEventListener('click', function(ev){
     setstate('reviewing');
     takepicture();

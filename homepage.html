@@ -34,7 +34,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><?php echo UNIVERSITY_NAME + " Bookswap"; ?></a>
+          <a class="navbar-brand" href="#"><?php echo UNIVERSITY_NAME; ?> Bookswap</a>
         </div>
         <div class="navbar-collapse collapse">
           <?php if (empty($_SESSION['user'])): ?>
@@ -58,8 +58,8 @@
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Hello, world!</h1>
-        <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
+        <h1><?php echo UNIVERSITY_NAME; ?> Bookswap</h1>
+        <p>A modern bookexchange to empower students, cut out the middle man, and encourage reuse and community building. Built by students, for students, and limited to campus members.</p>
         <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
       </div>
     </div>
@@ -67,19 +67,33 @@
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
+        <div class="col-md-12">
+          <h2>Better than...</h2>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <h3>Facebook</h3>
+          <div style="display: table-cell;vertical-align: middle;height: 300px;">
+            <img src="images/textbooks1.png" width="100%" />
+          </div>
+          <p>Disorganized and inactive listing, low amount of signal to noise, and no standardized format to search or track the status of interactions. </p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
         <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+          <h3>MyUMBC</h3>
+          <div style="display: table-cell;vertical-align: middle;height: 300px;">
+            <img src="images/textbooks2.png" width="100%"/>
+          </div>
+          <p>Difficult to navigate, some more lorem ipsum. </p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
        </div>
         <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+          <h3>Bookstore</h3>
+          <div style="display: table-cell;vertical-align: middle;height: 300px;">
+            <img src="images/textbooks3.png" width="100%"/>
+          </div>
+          <p>Centralized system with very low payoff to sellers and large cost to buyers. Middle man collects large profit and everyone loses.</p>
           <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div>
       </div>
