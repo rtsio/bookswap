@@ -1,5 +1,5 @@
 <?php
-	$isbn = $_POST['isbn'];
+	$isbn = $_GET['isbn'];
 	if(!$isbn || strlen($isbn)<9){
             return false;
      }
