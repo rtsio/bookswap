@@ -1,0 +1,32 @@
+afst,African studies
+agst,Aging studies 
+amst,American studies 
+ancs,Ancient studies
+anth,Anthropology 
+arch,Archeology
+asia,Asian studies
+biol,Biology
+chem,Chemistry
+chin,Chinese
+cmpe,Computer engineering
+cmsc,Computer science
+econ,Economics
+engl,English
+enme,Engineering
+ges,Geography and Environmental studies
+grek,Greek
+happ,Health administration
+hist,History
+is,Information systems
+jpns,Japanese
+kore,Korean
+latn,Latin
+math,Mathematics
+mgmt,Management
+mll,Modern Languages and Linguistics
+musc,Music
+phil,Philosophy
+phys,Physics
+poli,Political sciences
+psyc,Psychology
+stat,Statistics
