@@ -12,7 +12,7 @@
     }
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $query = "SELECT id FROM users WHERE username = :username";
+    $query = "SELECT id FROM user WHERE username = :username";
     $query_params = array(':username' => $_POST['username']);  
     try { 
         $stmt = $db->prepare($query); 
