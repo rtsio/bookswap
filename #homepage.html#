@@ -26,13 +26,6 @@
   <body>
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
-    <div class="jumbotron">
-      <div class="container">
-        <h1><?php echo UNIVERSITY_NAME; ?> Bookswap</h1>
-        <p>A modern bookexchange to empower students, cut out the middle man, and encourage reuse and community building. Built by students, for students, and limited to campus members.</p>
-        
-      </div>
-    </div>
 
     <div class="container">
       <!-- Example row of columns -->
