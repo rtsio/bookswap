@@ -9,7 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookSwap - by students, for students</title>
     <link rel="stylesheet" href="css/bootstrap.css"> 
-    <link href="css/jumbotron-narrow.css" rel="stylesheet"> 
+    <link href="css/jumbotron-narrow.css" rel="stylesheet">
+    <script>
+    $("#isbn").change(function(){ 
+        if ($("#isbn").val().length < 10) {
+            $("#found").html("ISBN not found, please enter data manually.");
+        } else {
+            $("#found").html("ISBN found! Please check the data below for correctness.");
+        }
+    }); 
   </head>
   <body>
     <div class="container">
@@ -68,6 +76,7 @@
         <label for="isbn">Enter your ISBN:</label>
         <input type="text" name="isbn" id="isbn" class="form-control" placeholder="isbn">
       </div>
+     <span id="found"></span>
      <div class="form-group">
         <label for="title">Title</label>
         <input type="text" id="title" name="title" class="form-control" placeholder="title">
