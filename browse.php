@@ -15,10 +15,7 @@
       if (empty($_SESSION['user'])): 
           header("Location: /index.php");
       else: 
-          $category = "";
-          if (empty($_GET)) {
-              $category = "all";
-          } else { 
+          if (!empty($_GET)) { 
               $category = $_GET["cat"];
           }
 	  echo $category;

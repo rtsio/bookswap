@@ -29,10 +29,31 @@
     Browse: <br />
     <div>
       <p>
-        Biology | Chemistry | Economics | Mathematics
+        <a href="browse.php?cat=biology">Biology</a> | <a href="browse.php?cat=biology">Chemistry</a>
+        <a href="browse.php?cat=economics">Economics</a> | <a href="browse.php?cat=mathematics">Mathematics</a><br>
       </p>
       <p>
-        Psychology | Clickers | Access codes | <a href="browse.php">More...</a>
+        <a href="browse.php?cat=psychology">Psychology</a> | <a href="browse.php?cat=clickers">Clickers</a>
+        <a href="browse.php?cat=codes">Access codes</a> | <a href="browse.php">More...</a>
+	<form action="browse.php">
+          <select>
+            <option value=""> </option>
+            <option value=""> </option>
+            <option value=""> </option>
+            <option value=""> </option>
+            <option value=""> </option>
+            <option value=""> </option>
+            <option value=""> </option>
+            <option value=""> </option>
+            <option value=""> </option>
+            <option value=""> </option>
+            <option value=""> </option>
+            <option value=""> </option>
+            <option value=""> </option>
+            <option value=""> </option>
+          </select>
+          <input type="submit">
+        </form>
       </p>
     </div>
     <div>
