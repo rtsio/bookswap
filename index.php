@@ -1,7 +1,7 @@
 <?php
    // TODO: include university title in html title tags
    require("php/common.php");
-   require("config.php");
+   // require("config.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,20 +13,19 @@
     <link href="css/jumbotron-narrow.css" rel="stylesheet"> 
   </head>
   <body>
-
     <div class="container">
       <div class="header">
         <form class="navbar-form form-inline pull-right">
          <div class="btn-group">
-	   <a class="btn btn-primary">Home</a>
-	   <a class="btn btn-primary">Sell</a>
-	   <a class="btn btn-primary">Contact</a>
+	   <a href="index.php" class="btn btn-primary">Home</a>
+	   <a href="sell.php" class="btn btn-primary">Sell</a>
+	   <a href="contact.php" class="btn btn-primary">Contact</a>
          </div>
         </form>
        <?php if (empty($_SESSION['user'])): ?>
-          <form class="navbar-form" style="margin-left: 0px" role="form" action="php/login.php" method="POST">
+          <form class="navbar-form" role="form" action="php/login.php" method="POST">
             <div class="form-group">
-              <input type="text" name="user" placeholder="user" class="form-control">
+              <input type="text" name="user" placeholder="username" class="form-control">
             </div>
             <div class="form-group">
               <input type="password" name="pass" placeholder="password" class="form-control">
@@ -34,16 +33,16 @@
             <button type="submit" class="btn btn-success">Sign in</button>
             <?php else: ?>
             Welcome back,  <?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?>.
-            <a href="logout.php">Logout.</a>
+            <a class="btn btn-alert" href="logout.php">Logout.</a>
             <?php endif; ?>
           </form>
        </div>
 
     <?php if (empty($_SESSION['user'])): ?>
       <div class="jumbotron">
-        <h1>Jumbotron heading</h1>
+        <h1><?php echo UNIVERSITY_NAME ?> BookSwap</h1>
         <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        <p><a class="btn btn-lg btn-success" href="#" role="button">Sign up today</a></p>
+        <p><a class="btn btn-lg btn-success" href="register.html" role="button">Sign up</a></p>
       </div>    
     </div>
 
