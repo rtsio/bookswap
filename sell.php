@@ -35,11 +35,12 @@ $(document).ready(function(){
                                     }
       else{
 
-    $("#found").html("ISBN found! Please check the data below for correctness.");
-    $("#found").css({'color':'green'});
+    
     console.log(json["ISBN"+$("#isbn").val().length]);
       for(var n in json){
         json = json[n];
+        $("#found").html("<img style=\"margin-right:10px;margin-bottom:5px;\" src='"+json.thumbnail_url+"' /> ISBN found! Please check the data below and fill in missing fields.");
+          $("#found").css({'color':'green'});
         console.log(json.details.authors[0].name);
         $('#title').val(json.details.title);
         $('#author').val(json.details.authors[0].name);
