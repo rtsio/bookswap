@@ -38,11 +38,47 @@
     <?php if (empty($_SESSION['user'])): ?>
     <div class="jumbotron">
       <div class="container">
-        <h1><?php echo UNIVERSITY_NAME; ?> Bookswap</h1>
+        <h1><?php echo UNIVERSITY_NAME; ?>'s BookSwap</h1>
         <p>A modern bookexchange to empower students, cut out the middle man, and encourage reuse and community building. Built by students, for students, and limited to campus members.</p>
         <p><a class="btn btn-primary btn-lg" role="button" href="register.html">Learn more &raquo;</a></p>        
       </div>
     </div>
+
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Better than...</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Facebook</h3>
+          <div style="display: table-cell;vertical-align: middle;height: 300px;">
+            <img src="images/textbooks1.png" width="100%" />
+          </div>
+          <p>Disorganized and inactive listing, low amount of signal to noise, and no standardized format to search or track the status of interactions. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h3>MyUMBC</h3>
+          <div style="display: table-cell;vertical-align: middle;height: 300px;">
+            <img src="images/textbooks2.png" width="100%"/>
+          </div>
+          <p>Difficult to navigate, some more lorem ipsum. </p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h3>Bookstore</h3>
+          <div style="display: table-cell;vertical-align: middle;height: 300px;">
+            <img src="images/textbooks3.png" width="100%"/>
+          </div>
+          <p>Centralized system with very low payoff to sellers and large cost to buyers. Middle man collects large profit and everyone loses.</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+    </div> <!-- /container -->
     <?php else: ?>
     Welcome back,  <?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?>.<br />
     Search: <input type="text">
@@ -70,5 +106,7 @@
     </div>
     <a href="logout.php">Logout.</a>
     <?php endif; ?>
+    <script src="https://code.jquery.com/jquery-1.10.3.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
