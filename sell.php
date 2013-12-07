@@ -10,7 +10,9 @@
     <title>BookSwap - by students, for students</title>
     <link rel="stylesheet" href="css/bootstrap.css"> 
     <link href="css/jumbotron-narrow.css" rel="stylesheet">
-    <script>
+<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>    
+<script>
     $("#isbn").change(function(){ 
         if ($("#isbn").val().length < 10) {
             $("#found").html("ISBN not found, please enter data manually.");
@@ -18,6 +20,7 @@
             $("#found").html("ISBN found! Please check the data below for correctness.");
         }
     }); 
+    </script>
   </head>
   <body>
     <div class="container">
@@ -109,7 +112,5 @@
     <a href="logout.php">Logout.</a>
     <?php endif; endif; ?>
     </div></div></div></div>
-<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
