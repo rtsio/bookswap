@@ -4,6 +4,20 @@
    require("config.php");
    if ($_SERVER['REQUEST_METHOD'] === 'POST'):
        print_r($_POST);
+       $query = "INSERT INTO sell (isbn, title, author, edition, category, price)
+                 VALUES (:isbn, :title, :author, :edition, :category, :price)";
+       $query_params = array(':isbn' => $_POST['isbn'],
+       		       	     ':title' => $_POST['title']
+                             ':author' => $_POST['author']
+                             ':edition' => $_POST['edition']
+                             ':category' => $_POST['category']);
+			     ':price' => $_POST['price'] 
+       try { 
+           $stmt = $db->prepare($query); 
+           $result = $stmt->execute($query_params); 
+       } catch(PDOException $ex) { 
+           die("Failed to run query: " . $ex->getMessage()); 
+       }
    else:
 ?>
 <!DOCTYPE html>
