@@ -16,18 +16,25 @@
     <title>BookSwap - by students, for students</title>
     <link rel="stylesheet" href="css/bootstrap.css"> 
     <link href="css/jumbotron-narrow.css" rel="stylesheet"> 
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"> </script>
+    <script>
+      function setmodalmessage(postdate, postisbn, postprice){
+        $('#emailmessage').text("There is a student interested in purchasing the textbook you listed on "+postdate+" with the ISBN "+postisbn+
+          ". You originally listed this book for "+postprice+". You may contact this user by replying to this email.");
+      }
+    </script>
   </head>
   <body>
     <div class="container">
       <div class="header">
         <form class="navbar-form form-inline pull-right">
          <div class="btn-group">
-	   <a href="index.php" class="btn btn-primary">Home</a>
-	   <a href="sell.php" class="btn btn-primary">Sell</a>
-	   <a href="contact.php" class="btn btn-primary">Contact</a>
+      	   <a href="index.php" class="btn btn-primary">Home</a>
+      	   <a href="sell.php" class="btn btn-primary">Sell</a>
+      	   <a href="contact.php" class="btn btn-primary">Contact</a>
          </div>
         </form>
-          <h3 class="text-muted">Welcome back,  <?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?>.</h3>
+          <h3 class="text-muted">Welcome back, <?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?>.</h3>
        </div>
     <div class="container">
       <div class="row">
@@ -46,12 +53,39 @@
                 echo "<td>{$book['price']}</td>";
                 echo "<td>{$book['condition']}</td>";
                 echo "<td>{$book['timestamp']}</td>";
-                echo "<td><a href='#'>Buy Now!!!</a></td>";
+                echo "<td><button class='btn btn-success btn-md' data-toggle='modal' data-target='#myModal' onclick='setmodalmessage(\"{$book['timestamp']}\", \"{$book['isbn']}\", \"{$book['price']}\")'>Buy Now</button></td>";
                 echo "</tr>\n";
               }
           }
     ?>
     </table>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Send Email to Seller</h4>
+      </div>
+      <div class="modal-body">
+        <form role="form">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Your Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Message</label>
+            <textarea class="form-control" id="emailmessage" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
     </div></div></div></div>
       <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>

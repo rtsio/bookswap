@@ -2,8 +2,6 @@
    // TODO: include university title in html title tags
    require("php/common.php");
    if ($_SERVER['REQUEST_METHOD'] === 'POST'):
-       print_r($_POST);
-       print_r($_SESSION);
        $query = "INSERT INTO sell (`isbn`, `title`, `author`, `edition`, `category`, `condition`, `price`, `user`)
                  VALUES (:isbn, :title, :author, :edition, :category, :condition, :price, :user)";
        $query_params = array(':isbn' => trim($_POST['isbn']),
@@ -16,18 +14,14 @@
                               ':user' => "useme"
                               //':user' => trim($_SESSION['user']['email'])
                             );
-       var_dump($_SESSION['user']);
        try { 
            $stmt = $db->prepare($query); 
-           $result = $stmt->execute($query_params); 
-           echo "result:";
-          var_dump($stmt->errorCode());
+           $result = $stmt->execute($query_params);
        } catch(PDOException $ex) { 
            die("Failed to run query: " . $ex->getMessage()); 
        }
    else:
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
