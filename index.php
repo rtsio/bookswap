@@ -12,7 +12,7 @@
   </head>
   <body>
     <?php if (empty($_SESSION['user'])): ?>
-    Welcome to <?php echo $UNIVERSITY_NAME ?>'s BookSwap!
+    Welcome to <?php echo UNIVERSITY_NAME ?>'s BookSwap!
     <div id="login">
       <form action="php/login.php" method="POST">
 	<input type="text" name="user" placeholder="username" required>
