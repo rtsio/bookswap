@@ -3,7 +3,7 @@
     if(empty($_POST)) {
         die();
     }
-    require("common.php"); 
+    require_once("common.php"); 
     $query = "SELECT 1 FROM user WHERE username = :user"; 
     $query_params = array(':user' => $_POST['user']); 
     try { 

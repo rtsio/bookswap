@@ -1,6 +1,6 @@
 <?php 
 
-    require("common.php");
+    require_once("common.php");
     if(empty($_POST)) {
         die();
     } 

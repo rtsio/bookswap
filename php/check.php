@@ -1,15 +1,14 @@
 <?php
 
-    $username = "hck"; 
-    $password = "umbchackathon"; 
-    $host = "localhost"; 
-    $dbname = "umbc"; 
-     
+    require_once('config.php');
+    
     try { 
-        $db = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $username, $password);
+        $db = new PDO("mysql:host={DB_HOST};dbname={DB_NAME};charset=utf8", DB_USERNAME, DB_PASSWORD, array (
+            PDO::ATTR_PERSISTENT => true));
     } catch(PDOException $ex) { 
         die("Failed to connect to the database: " . $ex->getMessage()); 
     }
+
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $query = "SELECT id FROM user WHERE username = :username";
@@ -22,9 +21,9 @@
     }    
     
     if ($stmt->fetch()) {
-	echo 1;
+	   echo 1;
     } else {
-	echo 0;
+	   echo 0;
     }
 ?>
 

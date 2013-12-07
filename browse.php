@@ -1,7 +1,7 @@
 <?php
    // TODO: include university title in html title tags
-   require("php/common.php");
-   require("config.php");
+   require_once("php/common.php");
+   require_once("config.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

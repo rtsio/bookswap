@@ -1,12 +1,8 @@
 <?php
-
-    $username = "hck"; 
-    $password = "umbchackathon"; 
-    $host = "localhost"; 
-    $dbname = "umbc"; 
-     
+    require_once('config.php');
+    
     try { 
-        $db = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $username, $password, array (
+        $db = new PDO("mysql:host={DB_HOST};dbname={DB_NAME};charset=utf8", DB_USERNAME, DB_PASSWORD, array (
             PDO::ATTR_PERSISTENT => true));
     } catch(PDOException $ex) { 
         die("Failed to connect to the database: " . $ex->getMessage()); 
@@ -16,7 +12,7 @@
     header('Content-Type: text/html; charset=utf-8'); 
     session_start();
 
-    function getAllMajorsArray($filename="/home/hck/majors.txt"){
+    function getAllMajorsArray($filename = PATH_TO_MAJOR_LIST){
         $majors = array();
         $lines = file($filename, FILE_IGNORE_NEW_LINES);
         $temp;
@@ -35,10 +31,9 @@
         $query = "SELECT * FROM sell "; 
         if($category) {
              $query .= "WHERE category = :category ";
+             $query_params = array(':category' => $category); 
         }
         $query .= "ORDER BY timestamp";
-
-        $query_params = array(':category' => $_GET['user']); 
 
         try { 
             global $db;
