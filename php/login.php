@@ -5,7 +5,7 @@
         die();
     } 
     $submitted_username = '';  
-    $query = "SELECT id, username, password, failed_logins, 
+    $query = "SELECT id, username, email, password, failed_logins, 
     	      TIMESTAMPDIFF(MINUTE, last_attempt, NOW()) as last FROM user WHERE username = :username"; 
     $query_params = array(':username' => $_POST['user']); 
     try { 

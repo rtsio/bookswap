@@ -1,17 +1,18 @@
 <?php
    // TODO: include university title in html title tags
    require("php/common.php");
-   require("config.php");
    if ($_SERVER['REQUEST_METHOD'] === 'POST'):
        print_r($_POST);
-       $query = "INSERT INTO sell (isbn, title, author, edition, category, price)
-                 VALUES (:isbn, :title, :author, :edition, :category, :price)";
+       $query = "INSERT INTO sell (isbn, title, author, edition, category, condition, price, user)
+                 VALUES (:isbn, :title, :author, :edition, :category, :condition, :price, :user)";
        $query_params = array(':isbn' => $_POST['isbn'],
        		       	     ':title' => $_POST['title'],
                              ':author' => $_POST['author'],
                              ':edition' => $_POST['edition'],
                              ':category' => $_POST['category'],
-			     ':price' => $_POST['price'] 
+          		     ':condition' => $_POST['condition'],
+			     ':price' => $_POST['price'],
+ 			     ':user' => $_SESSION['user']['email']
                             );
        try { 
            $stmt = $db->prepare($query); 
@@ -39,7 +40,15 @@
       <input type="text" name="title" placeholder="title">
       <input type="text" name="author" placeholder="author(s)">
       <input type="text" name="edition" placeholder="edition">
-      <input type="text" name="category" placeholder="category">
+      <select name="category" class="form-control">
+        <?php
+        $majors = getAllMajorsArray();
+        foreach($majors as $code => $major){
+            echo "<option value='$code'>$major</option>";
+        }
+        ?>
+      </select>
+      <input type="text" name="condition" placeholder="condition">
       <input type="text" name="price" placeholder="price"> 
       <input type="submit">
     </form>
