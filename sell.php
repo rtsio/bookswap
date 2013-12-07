@@ -59,17 +59,17 @@
     <form name="sell" role="form" method="POST">
       <div class="form-group"> 
         <label for="isbn">Enter your ISBN:</label>
-        <input type="text" name="isbn" id="isbn" placeholder="isbn">
+        <input type="text" name="isbn" id="isbn" class="form-control" placeholder="isbn">
       </div>
      <div class="form-group">
         <label for="title">Title</label>
-        <input type="text" id="title" name="title" placeholder="title">
+        <input type="text" id="title" name="title" class="form-control" placeholder="title">
       </div><div class="form-group">
 <label for="author">Author</label>
-        <input type="text" id="author" name="author" placeholder="author(s)">
+        <input type="text" id="author" class="form-control" name="author" placeholder="author(s)">
       </div><div class="form-group">      
 <label for="edition">Edition (optional)</label>
-        <input type="text" id="edition" name="edition" placeholder="edition">
+        <input type="text" id="edition" class="form-control" name="edition" placeholder="edition">
       </div><div class="form-group">
       <label for="category">Category</label>
       <select name="category" id="category" class="form-control">
@@ -80,9 +80,15 @@
         }
         ?>
       </select></div>
-      <input type="text" name="condition" placeholder="condition">
-      <input type="text" name="price" placeholder="price"> 
-      <input type="submit">
+      <div class="form-group">
+      <label for="condition">Condition</label>
+      <input type="text" class="form-control" id="condition" name="condition" placeholder="condition">
+      </div>
+<div class="form-group">
+      <label for="price">Price</label>
+      <input type="text" class="form-control" id="price" name="price" placeholder="price"> 
+      </div>
+      <input type="submit" class="form-control">
     </form>
     <a href="logout.php">Logout.</a>
     <?php endif; endif; ?>
