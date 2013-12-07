@@ -45,6 +45,7 @@
         UNIVERSITY_NAME ?> BookSwap to find students on campus with the books you need. Sell your books directly to other
         students through an organized, effective interface. Cut out the middle men. Built by students, for students.</p>
         <p><a class="btn btn-lg btn-success" href="register.html" role="button">Sign up</a></p>
+        <p><img src="images/facebook.jpg" width="100%"/></p>
       </div>    
     </div>
 
