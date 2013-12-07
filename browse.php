@@ -76,13 +76,12 @@
             <label for="exampleInputPassword1">Message</label>
             <textarea class="form-control" id="emailmessage" rows="3"></textarea>
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary" onclick="alert('Message sent!')">Submit</button>
       </div>
+       </form>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
