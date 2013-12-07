@@ -7,10 +7,34 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookSwap - by students, for students</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
   </head>
   <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><?php echo UNIVERSITY_NAME; ?>'s BookSwap</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <?php if (empty($_SESSION['user'])): ?>
+          <form class="navbar-form navbar-right" role="form" action="php/login.php" method="POST">
+            <div class="form-group">
+              <input type="text" name="user" placeholder="user" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" name="pass" placeholder="password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+            <?php else: ?>
+            Welcome back,  <?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?>.
+            <a href="logout.php">Logout.</a>
+            <?php endif; ?>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
     <?php if (empty($_SESSION['user'])): ?>
     Welcome to <?php echo UNIVERSITY_NAME ?>'s BookSwap! This is a book exchange
     run by students, for students - cutting out the middlemen and making your education cheaper.
@@ -69,7 +93,8 @@
             <option value="poli">Political sciences</option>
             <option value="psyc">Psychology</option>
             <option value="stat">Statistics</option>
-          </select>
+            <option value="other">Other</option>
+	   </select>
           <input type="submit">
         </form>
       </p>
