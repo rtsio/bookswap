@@ -4,7 +4,7 @@
         die();
     }
     require("common.php"); 
-    $query = "SELECT 1 FROM users WHERE username = :user"; 
+    $query = "SELECT 1 FROM user WHERE username = :user"; 
     $query_params = array(':user' => $_POST['user']); 
     try { 
      	  $stmt = $db->prepare($query); 
@@ -18,7 +18,7 @@
          die("This username is already in use."); 
     } 
 
-    $query = "SELECT 1 FROM users WHERE email = :email"; 
+    $query = "SELECT 1 FROM user WHERE email = :email"; 
     $query_params = array(':email' => $_POST['email']); 
     try { 
         $stmt = $db->prepare($query); 
@@ -32,7 +32,7 @@
         die("This email address is already registered."); 
     } 
      
-    $query = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
+    $query = "INSERT INTO user (username, email, password) VALUES (:username, :email, :password)";
     $password = password_hash($_POST['pass'], PASSWORD_DEFAULT); 
     $query_params = array( 
          	     ':username' => $_POST['user'], 
