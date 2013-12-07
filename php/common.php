@@ -23,23 +23,38 @@
         return $majors;
     }
 
-    function getBooksArray($category=null,$user=null){
+    function getBooksArray($category=null){
         if($category == "") { 
             $category = null;
         }
+
+        $query = "SELECT * FROM sell "; 
+        if($category) {
+             $query .= "WHERE category = :category ";
+             $query_params = array(':category' => $category); 
+        }
+        $query .= "ORDER BY price ASC, timestamp DESC";
+
+        try { 
+            global $db;
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
+            return $stmt->fetchAll();
+        } catch(PDOException $ex) { 
+            die("Failed to run query: " . $ex->getMessage()); 
+        } 
+        return false;
+    }
+
+    function getUserBooksArray($user=null){
         if($user == "") { 
             $user = null;
         }
 
-        $query = "SELECT * FROM sell WHERE 1 = 1 "; 
-        $query_params = array();
-        if($category) {
-             $query .= "AND category = :category ";
-             $query_params[':category'] = $category; 
-        }
+        $query = "SELECT * FROM sell "; 
         if($user) {
-             $query .= "AND user = :user ";
-             $query_params[':user'] = $user; 
+             $query .= "WHERE user = :user ";
+             $query_params = array(':user' => $user); 
         }
         $query .= "ORDER BY price ASC, timestamp DESC";
 
