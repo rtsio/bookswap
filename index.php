@@ -35,7 +35,7 @@
       </p>
     </div>
     <div>
-      I want to sell
+      <a href="sell.php">I want to sell</a>
     </div>
     <a href="logout.php">Logout.</a>
     <?php endif; ?>
