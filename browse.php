@@ -41,7 +41,7 @@
         <div class="col-md-11">
 
     <table class="table">
-    <tr><th>ISBN</th><th>Title</th><th>Author</th><th>Edition</th><th>Price</th><th>Condition</th><th>Time listed</th></tr>
+    <tr><th>ISBN</th><th>Title</th><th>Author</th><th>Edition</th><th>Price</th><th>Condition</th><th>Time listed</th><th>&nbsp;</th></tr>
     <?php 
 	 if ($books && count($books) > 1){
               foreach($books as $book){
