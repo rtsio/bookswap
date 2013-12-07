@@ -12,7 +12,8 @@
   </head>
   <body>
     <?php if (empty($_SESSION['user'])): ?>
-    Welcome to <?php echo UNIVERSITY_NAME ?>'s BookSwap!
+    Welcome to <?php echo UNIVERSITY_NAME ?>'s BookSwap! This is a book exchange
+    run by students, for students - cutting out the middlemen and making your education cheaper.
     <div id="login">
       <form action="php/login.php" method="POST">
 	<input type="text" name="user" placeholder="username" required>
