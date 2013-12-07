@@ -12,13 +12,31 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookSwap - by students, for students</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css"> 
+    <link href="css/jumbotron-narrow.css" rel="stylesheet"> 
   </head>
   <body>
-    <table>
+    <div class="container">
+      <div class="header">
+        <form class="navbar-form form-inline pull-right">
+         <div class="btn-group">
+	   <a href="index.php" class="btn btn-primary">Home</a>
+	   <a href="sell.php" class="btn btn-primary">Sell</a>
+	   <a href="contact.php" class="btn btn-primary">Contact</a>
+         </div>
+        </form>
+          <h3 class="text-muted">Welcome back,  <?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?>.</h3>
+       </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-11">
+
+    <table class="table">
+    <tr><th>ISBN</th><th>Title</th>Author<th>Edition</th>Price<th>Condition</th><th>Time listed</th></tr>
     <?php 
-	        if ($books && count($books) > 1){
+	 if ($books && count($books) > 1){
               foreach($books as $book){
                 echo "<tr>";
                 echo "<td>{$book['isbn']}</td>";
@@ -34,6 +52,8 @@
           }
     ?>
     </table>
-    <a href="logout.php">Logout.</a>
+    </div></div></div></div>
+      <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
