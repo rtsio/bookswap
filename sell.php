@@ -18,21 +18,44 @@ $(document).ready(function(){
         if ($("#isbn").val().length < 9) {
             // don't query
         } else {
-            var jqxhr = $.getJSON( "example.json", function() {
+            var jqxhr = $.getJSON( "isbnlookup.php?isbn="+$("#isbn").val(), function() {
                                     console.log( "success" );
-                                  })
+                                  
+      })
                                       .done(function( json ) {
-    console.log( "JSON Data: " + json.users[ 3 ].name );
+    console.log(json);
+
+    if(JSON.stringify(json).length <3){
+                                              $('#title').val("");
+        $('#author').val("");
+        $('#edition').val(""); 
+
+      $("#found").html("ISBN not found, please enter data manually.");
+                                      $("#found").css({'color':'red'}); 
+                                    }
+      else{
+
+    $("#found").html("ISBN found! Please check the data below for correctness.");
+    $("#found").css({'color':'green'});
+    console.log(json["ISBN"+$("#isbn").val().length]);
+      for(var n in json){
+        json = json[n];
+        console.log(json.details.authors[0].name);
+        $('#title').val(json.details.title);
+        $('#author').val(json.details.authors[0].name);
+        $('#edition').val(json.details.revision);
+        break;
+      }
+  }
   })
                                     .fail(function() {
                                       $("#found").html("ISBN not found, please enter data manually.");
+                                      $("#found").css({'color':'red'});
+                                              $('#title').val("");
+        $('#author').val("");
+        $('#edition').val(""); 
                                     })
-            $("#found").html("ISBN not found, please enter data manually.");
-            $("#found").css({'color':'red'}); 
 
-          http://openlibrary.org/api/books?jscmd=details&format=json&bibkeys=ISBN:$isbn
-            $("#found").html("ISBN found! Please check the data below for correctness.");
-	    $("#found").css({'color':'green'});
         }
     }); 
 });
