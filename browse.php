@@ -1,7 +1,9 @@
 <?php
    // TODO: include university title in html title tags
    require_once("php/common.php");
-   require_once("config.php");
+
+   $books = getBooksArray($_GET["cat"]);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +18,13 @@
           header("Location: /index.php");
       else: 
           if (!empty($_GET)) { 
-              $category = $_GET["cat"];
+              $category = ;
           }
-	  echo $category;
+	        if ($books && count($books) > 1){
+              foreach($books as $book){
+                echo "<tr></tr>";
+              }
+          }
     ?>
     <a href="logout.php">Logout.</a>
     <?php endif;?>

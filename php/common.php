@@ -43,4 +43,5 @@
         } catch(PDOException $ex) { 
             die("Failed to run query: " . $ex->getMessage()); 
         } 
+        return false;
     }
