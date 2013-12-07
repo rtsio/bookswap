@@ -15,3 +15,14 @@
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     header('Content-Type: text/html; charset=utf-8'); 
     session_start();
+
+    function getAllMajorsArray($filename="../majors.txt"){
+        $majors = array();
+        $lines = file($filename, FILE_IGNORE_NEW_LINES);
+        $temp;
+        foreach($lines as $line){
+            $temp = explode(',', $line);
+            $majors[$temp[0]] = $temp[1]; 
+        }
+        return $majors;
+    }
