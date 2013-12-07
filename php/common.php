@@ -26,3 +26,26 @@
         }
         return $majors;
     }
+
+    function getBooksArray($category=null){
+        if($category == "") { 
+            $category = null;
+        }
+
+        $query = "SELECT * FROM sell "; 
+        if($category) {
+             $query .= "WHERE category = :category ";
+        }
+        $query .= "ORDER BY timestamp";
+
+        $query_params = array(':category' => $_GET['user']); 
+
+        try { 
+            global $db;
+            $stmt = $db->prepare($query); 
+            $result = $stmt->execute($query_params); 
+            return $stmt->fetchAll();
+        } catch(PDOException $ex) { 
+            die("Failed to run query: " . $ex->getMessage()); 
+        } 
+    }
