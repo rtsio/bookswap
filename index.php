@@ -84,25 +84,26 @@
     Search: <input type="text">
     Browse: <br />
     <div>
-      <p>
-        <a href="browse.php?cat=biol">Biology</a> | <a href="browse.php?cat=chem">Chemistry</a>
-        <a href="browse.php?cat=econ">Economics</a> | <a href="browse.php?cat=math">Mathematics</a><br>
-      </p>
-    <form action="browse.php" method="get">
-      <select name="cat">
-      <?php
-      $majors = getAllMajorsArray();
-      foreach($majors as $code => $major){
-          echo "<option value='$code'>$major</option>";
-      }
-      ?>
-            </select>
-          <input type="submit">
-        </form>
-      </p>
+      <div class="btn-group btn-group-justified success"
+        <a href="browse.php?cat=biol">Biology</a><a href="browse.php?cat=chem">Chemistry</a>
+        <a href="browse.php?cat=econ">Economics</a><a href="browse.php?cat=math">Mathematics</a><br>
+        <a href="browse.php?cat=psyc">Psychology</a><a href="browse.php?cat=clickers">Clickers</a>
+        <a href="browse.php?cat=codes">Access codes</a><a href="browse.php">More...</a>
+      </div>
+      <form action="browse.php" method="get">
+        <select name="cat">
+        <?php
+        $majors = getAllMajorsArray();
+        foreach($majors as $code => $major){
+            echo "<option value='$code'>$major</option>";
+        }
+        ?>
+        </select>
+        <input type="submit">
+      </form>
     </div>
     <div>
-      <a href="sell.php">I want to sell</a>
+      <a class="btn btn-primary btn-large" href="sell.php">I want to sell</a>
     </div>
     <a href="logout.php">Logout.</a>
     <?php endif; ?>
