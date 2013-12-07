@@ -18,7 +18,15 @@ $(document).ready(function(){
         if ($("#isbn").val().length < 9) {
             // don't query
         } else {
-            
+            var jqxhr = $.getJSON( "example.json", function() {
+                                    console.log( "success" );
+                                  })
+                                      .done(function( json ) {
+    console.log( "JSON Data: " + json.users[ 3 ].name );
+  })
+                                    .fail(function() {
+                                      $("#found").html("ISBN not found, please enter data manually.");
+                                    })
             $("#found").html("ISBN not found, please enter data manually.");
             $("#found").css({'color':'red'}); 
 
