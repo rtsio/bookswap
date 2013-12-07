@@ -2,7 +2,7 @@
     require_once('config.php');
     
     try { 
-        $db = new PDO("mysql:host={DB_HOST};dbname={DB_NAME};charset=utf8", DB_USERNAME, DB_PASSWORD, array (
+        $db = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8", DB_USERNAME, DB_PASSWORD, array (
             PDO::ATTR_PERSISTENT => true));
     } catch(PDOException $ex) { 
         die("Failed to connect to the database: " . $ex->getMessage()); 

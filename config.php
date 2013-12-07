@@ -2,8 +2,8 @@
 
 /* Database Config */
 define('DB_USERNAME', 'hck'); 
-define('DB_PASSWORD', 'umbchackathon') 
-define('DB_HOST', 'localhost') 
+define('DB_PASSWORD', 'umbchackathon'); 
+define('DB_HOST', 'localhost');
 define('DB_NAME', 'umbc');
 
 /* Site Config */
