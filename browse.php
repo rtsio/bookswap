@@ -31,7 +31,7 @@
          <div class="btn-group">
       	   <a href="index.php" class="btn btn-primary">Home</a>
       	   <a href="sell.php" class="btn btn-primary">Sell</a>
-      	   <a href="contact.php" class="btn btn-primary">Contact</a>
+      	   <a href="account.php" class="btn btn-primary">Account</a>
          </div>
         </form>
           <h3 class="text-muted">Welcome back, <?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?>.</h3>

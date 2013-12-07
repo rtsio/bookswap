@@ -19,7 +19,7 @@
          <div class="btn-group">
 	   <a href="index.php" class="btn btn-primary">Home</a>
 	   <a href="sell.php" class="btn btn-primary">Sell</a>
-	   <a href="contact.php" class="btn btn-primary">Contact</a>
+	   <a href="account.php" class="btn btn-primary">Account</a>
          </div>
         </form>
        <?php if (empty($_SESSION['user'])): ?>

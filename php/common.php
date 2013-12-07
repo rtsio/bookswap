@@ -23,15 +23,23 @@
         return $majors;
     }
 
-    function getBooksArray($category=null){
+    function getBooksArray($category=null,$user=null){
         if($category == "") { 
             $category = null;
         }
+        if($user == "") { 
+            $user = null;
+        }
 
-        $query = "SELECT * FROM sell "; 
+        $query = "SELECT * FROM sell WHERE 1 = 1 "; 
+        $query_params = array();
         if($category) {
-             $query .= "WHERE category = :category ";
-             $query_params = array(':category' => $category); 
+             $query .= "AND category = :category ";
+             $query_params[':category'] = $category; 
+        }
+        if($user) {
+             $query .= "AND user = :user ";
+             $query_params[':user'] = $user; 
         }
         $query .= "ORDER BY price ASC, timestamp DESC";
 

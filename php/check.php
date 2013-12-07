@@ -1,16 +1,7 @@
 <?php
 
-    require_once('config.php');
-    
-    try { 
-        $db = new PDO("mysql:host={DB_HOST};dbname={DB_NAME};charset=utf8", DB_USERNAME, DB_PASSWORD, array (
-            PDO::ATTR_PERSISTENT => true));
-    } catch(PDOException $ex) { 
-        die("Failed to connect to the database: " . $ex->getMessage()); 
-    }
+    require_once('common.php');
 
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
-    $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $query = "SELECT id FROM user WHERE username = :username";
     $query_params = array(':username' => $_POST['username']);  
     try { 
@@ -25,6 +16,5 @@
     } else {
 	   echo 0;
     }
+    die();
 ?>
-
-
