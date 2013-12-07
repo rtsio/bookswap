@@ -16,9 +16,13 @@
 $(document).ready(function(){
     $("#isbn").change(function(){ 
         if ($("#isbn").val().length < 9) {
+            // don't query
+        } else {
+            
             $("#found").html("ISBN not found, please enter data manually.");
             $("#found").css({'color':'red'}); 
-        } else {
+
+          http://openlibrary.org/api/books?jscmd=details&format=json&bibkeys=ISBN:$isbn
             $("#found").html("ISBN found! Please check the data below for correctness.");
 	    $("#found").css({'color':'green'});
         }
