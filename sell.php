@@ -37,8 +37,7 @@
                               ':category' => trim($_POST['category']),
                               ':condition' => trim($_POST['condition']),
                               ':price' => trim($_POST['price']),
-                              ':user' => "useme"
-                              //':user' => trim($_SESSION['user']['email'])
+                              ':user' => trim($_SESSION['user']['email'])
                             );
        try { 
            $stmt = $db->prepare($query); 
