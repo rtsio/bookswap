@@ -80,6 +80,10 @@
       </div>
     </div> <!-- /container -->
     <?php else: ?>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+   
     Welcome back,  <?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?>.<br />
     Search: <input type="text">
     Browse: <br />
@@ -109,7 +113,9 @@
     <div>
       <a class="btn btn-primary btn-large" href="sell.php">I want to sell</a>
     </div>
-    <a href="logout.php">Logout.</a>
+    </div>
+    </div>
+    </div>
     <?php endif; ?>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
