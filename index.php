@@ -9,7 +9,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BookSwap - by students, for students</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css"> 
+    <style>
+    body {
+      padding-top: 50px;
+      padding-bottom: 20px;
+    }
+    </style>
   </head>
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -43,8 +49,6 @@
         <p><a class="btn btn-primary btn-lg" role="button" href="register.html">Learn more &raquo;</a></p>        
       </div>
     </div>
-
-
     <div class="container">
       <!-- Example row of columns -->
       <div class="row">
