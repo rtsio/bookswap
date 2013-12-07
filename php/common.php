@@ -33,7 +33,7 @@
              $query .= "WHERE category = :category ";
              $query_params = array(':category' => $category); 
         }
-        $query .= "ORDER BY timestamp DESC";
+        $query .= "ORDER BY price ASC, timestamp DESC";
 
         try { 
             global $db;
