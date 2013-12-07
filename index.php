@@ -84,11 +84,15 @@
     Search: <input type="text">
     Browse: <br />
     <div>
-      <div class="btn-group btn-group-justified success"
-        <a href="browse.php?cat=biol">Biology</a><a href="browse.php?cat=chem">Chemistry</a>
-        <a href="browse.php?cat=econ">Economics</a><a href="browse.php?cat=math">Mathematics</a><br>
-        <a href="browse.php?cat=psyc">Psychology</a><a href="browse.php?cat=clickers">Clickers</a>
-        <a href="browse.php?cat=codes">Access codes</a><a href="browse.php">More...</a>
+      <div class="btn-group-lg">
+        <a class="btn btn-success" href="browse.php?cat=biol">Biology</a>
+        <a class="btn btn-success" href="browse.php?cat=chem">Chemistry</a>
+        <a class="btn btn-success" href="browse.php?cat=econ">Economics</a>
+        <a class="btn btn-success" href="browse.php?cat=math">Mathematics</a><br>
+        <a class="btn btn-success" href="browse.php?cat=psyc">Psychology</a>
+        <a class="btn btn-success" href="browse.php?cat=clickers">Clickers</a>
+        <a class="btn btn-success" href="browse.php?cat=codes">Access codes</a>
+        <a class="btn btn-success" href="browse.php">More...</a>
       </div>
       <form action="browse.php" method="get">
         <select name="cat">
@@ -107,7 +111,7 @@
     </div>
     <a href="logout.php">Logout.</a>
     <?php endif; ?>
-    <script src="https://code.jquery.com/jquery-1.10.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
