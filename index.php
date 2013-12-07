@@ -25,13 +25,14 @@
     </div>
     <?php else: ?>
     Welcome back,  <?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?>.<br />
+    Search: <input type="text">
     Browse: <br />
     <div>
       <p>
         Biology | Chemistry | Economics | Mathematics
       </p>
       <p>
-        Psychology | Clickers | Access codes | More...
+        Psychology | Clickers | Access codes | <a href="browse.php">More...</a>
       </p>
     </div>
     <div>
