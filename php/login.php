@@ -6,7 +6,7 @@
     } 
     $submitted_username = '';  
     $query = "SELECT id, username, password, failed_logins, 
-    	      TIMESTAMPDIFF(MINUTE, last_attempt, NOW()) as last FROM users WHERE username = :username"; 
+    	      TIMESTAMPDIFF(MINUTE, last_attempt, NOW()) as last FROM user WHERE username = :username"; 
     $query_params = array(':username' => $_POST['user']); 
     try { 
         $stmt = $db->prepare($query); 
@@ -28,7 +28,7 @@
                 $login_ok = true;
 	        // Find failed attempts and reset
 	        if ($row['failed_logins'] > 0) {
-	            $query = "UPDATE users SET failed_logins = 0 WHERE id = :id";
+	            $query = "UPDATE user SET failed_logins = 0 WHERE id = :id";
 	            $query_params = array(':id' => $row['id']);
                     $sth = $db->prepare($query);
                     $sth->execute($query_params);
@@ -40,7 +40,7 @@
                 die();
             } else {
 	        $ip = $_SERVER['REMOTE_ADDR'];
-                $query = "UPDATE users SET last_ip = :ip, last_attempt = CURRENT_TIMESTAMP, failed_logins = failed_logins + 1 WHERE id = :id"; 
+                $query = "UPDATE user SET last_ip = :ip, last_attempt = CURRENT_TIMESTAMP, failed_logins = failed_logins + 1 WHERE id = :id"; 
 	        $query_params = array(':id' => $row['id'], ':ip' => $ip);
 	        $sth = $db->prepare($query);
 	        $sth->execute($query_params); 
