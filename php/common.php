@@ -6,7 +6,8 @@
     $dbname = "umbc"; 
      
     try { 
-        $db = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $username, $password);
+        $db = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $username, $password, array (
+            PDO::ATTR_PERSISTENT => true));
     } catch(PDOException $ex) { 
         die("Failed to connect to the database: " . $ex->getMessage()); 
     }
