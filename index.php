@@ -40,7 +40,10 @@
     <?php if (empty($_SESSION['user'])): ?>
       <div class="jumbotron">
         <h1><?php echo UNIVERSITY_NAME ?> BookSwap</h1>
-        <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        <p class="lead">Tired of buying overpriced textbooks from Amazon and Chegg? Tired of searching through Ebay for that
+        exact edition your school requires? Tired of bookstore "buybacks" that pay you pennies for your books? Use <?php echo
+        UNIVERSITY_NAME ?> BookSwap to find students on campus with the books you need. Sell your books directly to other
+        students through an organized, effective interface. Cut out the middle men. Built by students, for students.</p>
         <p><a class="btn btn-lg btn-success" href="register.html" role="button">Sign up</a></p>
       </div>    
     </div>
