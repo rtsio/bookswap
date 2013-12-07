@@ -26,4 +26,13 @@ $(document).ready(function(){
 	    $("#submit").removeAttr('disabled');
 	}
     });
+    $("#pw").change(function(){ 
+    	if ($("#pw").val() != $("#pw2").val()) {
+ 	      $("#match").html("Passwords do not match.");
+ 	      $("#submit").attr('disabled', 'disabled');
+ 	} else {
+ 	      $("#match").html("");
+ 	      $("#submit").removeAttr('disabled');
+ 	}
+    });
 });
