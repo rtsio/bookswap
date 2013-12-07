@@ -1,6 +1,7 @@
 <?php
    // TODO: include university title in html title tags
    require("php/common.php");
+   require("config.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +12,7 @@
   </head>
   <body>
     <?php if (empty($_SESSION['user'])): ?>
+    Welcome to <?php echo $UNIVERSITY_NAME ?>'s BookSwap!
     <div id="login">
       <form action="php/login.php" method="POST">
 	<input type="text" name="user" placeholder="username" required>
@@ -22,7 +24,8 @@
     </div>
     <?php else: ?>
     Welcome back,  <?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?>.<br />
-    Close your browser to be unplugged.
+    Close your browser to be unplugged.<br />
+    <a href="logout.php">Logout.</a>
     <?php endif; ?>
   </body>
 </html>
