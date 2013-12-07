@@ -45,9 +45,17 @@
        } catch(PDOException $ex) { 
            die("Failed to run query: " . $ex->getMessage()); 
        }
-   echo "<pre>";
-   print_r($_POST);
-   echo "</pre>";
+?>
+<h4>Thank you for listing on UMBC BookSwap! Here are the details of your listing:</h4>
+<?php
+   
+   foreach ($_POST as $key=>$line) {
+   	   echo $key . " - " . $line . "<br>";
+   };
+?>
+   <h4>You can remove listings under your account page.</h4>
+   <a href="index.php" class="btn btn-success">Back to home.</a>
+<?php
    else:
 ?>
     <?php 
