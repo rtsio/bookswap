@@ -29,28 +29,46 @@
     Browse: <br />
     <div>
       <p>
-        <a href="browse.php?cat=biology">Biology</a> | <a href="browse.php?cat=biology">Chemistry</a>
-        <a href="browse.php?cat=economics">Economics</a> | <a href="browse.php?cat=mathematics">Mathematics</a><br>
+        <a href="browse.php?cat=biol">Biology</a> | <a href="browse.php?cat=chem">Chemistry</a>
+        <a href="browse.php?cat=econ">Economics</a> | <a href="browse.php?cat=math">Mathematics</a><br>
       </p>
       <p>
-        <a href="browse.php?cat=psychology">Psychology</a> | <a href="browse.php?cat=clickers">Clickers</a>
+        <a href="browse.php?cat=psyc">Psychology</a> | <a href="browse.php?cat=clickers">Clickers</a>
         <a href="browse.php?cat=codes">Access codes</a> | <a href="browse.php">More...</a>
-	<form action="browse.php">
-          <select>
-            <option value=""> </option>
-            <option value=""> </option>
-            <option value=""> </option>
-            <option value=""> </option>
-            <option value=""> </option>
-            <option value=""> </option>
-            <option value=""> </option>
-            <option value=""> </option>
-            <option value=""> </option>
-            <option value=""> </option>
-            <option value=""> </option>
-            <option value=""> </option>
-            <option value=""> </option>
-            <option value=""> </option>
+	<form action="browse.php" method="get">
+          <select name="cat">
+            <option value="afst">African studies</option>
+            <option value="agst">Aging studies </option>
+            <option value="amst">American studies </option>
+            <option value="ancs">Ancient studies</option>
+            <option value="anth">Anthropology </option>
+            <option value="arch">Archeology</option>
+            <option value="asia">Asian studies</option>
+            <option value="biol">Biology</option>
+            <option value="chem">Chemistry</option>
+            <option value="chin">Chinese</option>
+            <option value="cmpe">Computer engineering</option>
+            <option value="cmsc">Computer science</option>
+            <option value="econ">Economics</option>
+            <option value="engl">English</option>
+            <option value="enme">Engineering</option>
+            <option value="ges">Geography and Environmental studies</option>
+            <option value="grek">Greek</option>
+            <option value="happ">Health administration</option>
+            <option value="hist">History</option>
+            <option value="is">Information systems</option>
+            <option value="jpns">Japanese</option>
+            <option value="kore">Korean</option>
+            <option value="latn">Latin</option>
+            <option value="math">Mathematics</option>
+            <option value="mgmt">Management</option>
+            <option value="mll">Modern Languages and Linguistics</option>
+            <option value="musc">Music</option>
+            <option value="phil">Philosophy</option>
+            <option value="phys">Physics</option>
+            <option value="poli">Political sciences</option>
+            <option value="psyc">Psychology</option>
+            <option value="stat">Statistics</option>
           </select>
           <input type="submit">
         </form>
