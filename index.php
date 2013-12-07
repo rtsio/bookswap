@@ -25,7 +25,18 @@
     </div>
     <?php else: ?>
     Welcome back,  <?php echo htmlentities($_SESSION['user']['username'], ENT_QUOTES, 'UTF-8'); ?>.<br />
-    Close your browser to be unplugged.<br />
+    Browse: <br />
+    <div>
+      <p>
+        Biology | Chemistry | Economics | Mathematics
+      </p>
+      <p>
+        Psychology | Clickers | Access codes | More...
+      </p>
+    </div>
+    <div>
+      I want to sell
+    </div>
     <a href="logout.php">Logout.</a>
     <?php endif; ?>
   </body>
