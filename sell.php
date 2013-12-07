@@ -149,7 +149,6 @@ $(document).ready(function(){
       </div>
       <input type="submit" class="form-control">
     </form>
-    <a href="logout.php">Logout.</a>
     <?php endif; endif; ?>
     </div></div></div></div>
   </body>

@@ -75,7 +75,6 @@
           }
     ?>
     </table>
-    <a href="logout.php">logout</a>
     </div>
     </div>
     </div>

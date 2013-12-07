@@ -91,7 +91,6 @@
     <div style="margin-top: 10px;">
       <a class="btn btn-primary btn-large" href="sell.php">I want to sell</a>
     </div>
-    <a href="logout.php">logout</a>
     </div>
     </div>
     </div>
