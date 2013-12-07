@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>BookSwap - by students, for students</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="js/available.js"></script>
+  </head>
+  <body>
+    <div id="register">
+      <form action="/php/register.php" method="POST">
+	<input type="text" id="username" name="user" placeholder="username" required><span id="available"></span><br />
+	<input type="password" id="pw" name="pass" placeholder="password" required pattern=".{6,32}" title="Please enter 6 to 32 characters"><br />
+	<input type="password" id="pw2" name="pass2" placeholder="confirm password" required pattern=".{6,32}" title="Please enter 6 to 32 characters"><span id="match"></span><br />
+	<input type="email" name="email" placeholder="email" required><br />
+	<input type="submit" id="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>
